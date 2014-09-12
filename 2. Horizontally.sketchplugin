@@ -1,0 +1,9 @@
+// Align object to center
+
+#import 'common.js'
+
+// Center Vertically and Horizontally
+
+align(function(frame, bl) {
+	[frame setX: bl.x + (bl.w - [frame width]) / 2];
+});
