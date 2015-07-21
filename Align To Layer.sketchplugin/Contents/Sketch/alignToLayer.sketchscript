@@ -1,0 +1,79 @@
+var	bottomLayer = {};
+
+function align (context, callback) {
+	var selection = context.selection;
+	if ([selection count] <= 1) {
+		var app = [NSApplication sharedApplication];
+    	[app displayDialog:"You need at least two objects selected to align them" withTitle:"Boo!"];
+	}
+
+	for (var i=0; i < [selection count]; i++) {
+        var layer = selection[i];
+
+        // get layer frame
+        var frame   = [layer absoluteRect];
+
+        //check wether or not layer is the bottom one
+		if (i > 0) {
+			callback(frame, bottomLayer);
+		}
+		else
+		{
+			// Assign frame properties to bottom layer
+			bottomLayer.w 	=  [frame width];
+			bottomLayer.h 	=  [frame height];
+			bottomLayer.x 	=  [frame x];
+			bottomLayer.y 	=  [frame y];
+		}
+	}
+}
+
+//Align Left
+var alignLeft = function(context) {
+	align(context, function(frame, bl) {
+		[frame setX: bl.x];
+	});
+}
+
+//Align Horizontally
+var alignHorizontally = function(context) {
+	align(context, function(frame, bl) {
+		[frame setX: bl.x + (bl.w - [frame width]) / 2];
+	});
+}
+
+// Align Right
+var alignRight = function (context) {
+	align(context, function(frame, bl) {
+		[frame setX: bl.x + bl.w - [frame width]];
+	});
+}
+
+// Center Vertically and Horizontally
+var alignMiddle = function (context) {
+	align(context, function(frame, bl) {
+		[frame setX: bl.x + (bl.w - [frame width]) / 2];
+		[frame setY: bl.y + (bl.h - [frame height]) / 2];
+	});
+}
+
+// Align Top
+var alignTop = function (context) {
+	align(context, function(frame, bl) {
+		[frame setY: bl.y];
+	});
+}
+
+// Align Vertically
+var alignVertically = function (context) {
+	align(context, function(frame, bl) {
+		[frame setY: bl.y + (bl.h - [frame height]) / 2];
+	});
+}
+
+// Align Bottom
+var alignBottom = function (context) {
+	align(context, function(frame, bl) {
+		[frame setY: bl.y + bl.h - [frame height]];
+	});
+}

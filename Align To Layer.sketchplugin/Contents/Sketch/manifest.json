@@ -1,0 +1,73 @@
+{
+  "name": "Align to Layer",
+  "description": "A simple plugin that helps you align the top selected layer(s) to the bottom selected one",
+  "author": "Rodrigo Soares",
+  "homepage": "https://github.com/rodi01/Align-To-Layer",
+  "version": "1.0",
+  "identifier": "ninja.taptap.aligntolayer",
+  "compatibleVersion": "3.3.2",
+  "bundleVersion": 1,
+  "commands" : [
+    {
+      "name" : "1. Left",
+      "identifier" : "alignLeft",
+      "script" : "alignToLayer.sketchscript",
+      "handler" : "alignLeft",
+      "shortcut": ""
+    },
+    {
+      "name" : "2. Horizontally",
+      "identifier" : "alignHorizontally",
+      "script" : "alignToLayer.sketchscript",
+      "handler" : "alignHorizontally",
+      "shortcut": ""
+    },
+    {
+      "name" : "3. Right",
+      "identifier" : "alignRight",
+      "script" : "alignToLayer.sketchscript",
+      "handler" : "alignRight",
+      "shortcut": ""
+    },
+    {
+      "name" : "4. Middle",
+      "identifier" : "alignMiddle",
+      "script" : "alignToLayer.sketchscript",
+      "handler" : "alignMiddle",
+      "shortcut": ""
+    },
+    {
+      "name" : "5. Top",
+      "identifier" : "alignTop",
+      "script" : "alignToLayer.sketchscript",
+      "handler" : "alignTop",
+      "shortcut": ""
+    },
+    {
+      "name" : "6. Vertically",
+      "identifier" : "alignVertically",
+      "script" : "alignToLayer.sketchscript",
+      "handler" : "alignVertically",
+      "shortcut": ""
+    },
+    {
+      "name" : "7. Bottom",
+      "identifier" : "alignBottom",
+      "script" : "alignToLayer.sketchscript",
+      "handler" : "alignBottom",
+      "shortcut": ""
+    }
+  ],
+  "menu": {
+    "title": "Align to Layer",
+    "items": [
+      "alignLeft",
+      "alignHorizontally",
+      "alignRight",
+      "alignMiddle",
+      "alignTop",
+      "alignVertically",
+      "alignBottom"
+    ]
+  }
+}
